@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Story of the Aga Khans — Guidance in Changing Times</title>
+  <style>
+    :root{
+      --bg:#0b1220;
+      --bg2:#111827;
+      --panel:#162033;
+      --text:#e8edf5;
+      --muted:#a8b3c7;
+      --line:#2b3954;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:"Inter","Segoe UI",Arial,sans-serif;
+      background:linear-gradient(180deg,#08111f 0%,#0b1220 35%,#10192b 100%);
+      color:var(--text);
+      line-height:1.6;
+    }
+    .container{
+      width:min(1120px,92%);
+      margin:0 auto;
+      padding:36px 0 64px;
+    }
+    .hero{
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.04), rgba(255,255,255,0.01)),
+        linear-gradient(135deg, #1a2b44, #243d61 55%, #304f5a);
+      border:1px solid rgba(255,255,255,0.08);
+      border-radius:22px;
+      padding:42px 40px;
+      box-shadow:0 18px 40px rgba(0,0,0,0.28);
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background:
+        radial-gradient(circle at 85% 15%, rgba(255,255,255,0.10), transparent 24%),
+        radial-gradient(circle at 12% 88%, rgba(255,255,255,0.05), transparent 20%);
+      pointer-events:none;
+    }
+    .eyebrow{
+      display:inline-block;
+      padding:8px 14px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,0.12);
+      background:rgba(255,255,255,0.06);
+      font-size:13px;
+      color:#d9e4f6;
+      letter-spacing:.02em;
+      margin-bottom:14px;
+    }
+    h1{
+      margin:0 0 8px;
+      font-size:clamp(34px, 6vw, 60px);
+      line-height:1.05;
+      letter-spacing:-0.03em;
+    }
+    .subtitle{
+      font-size:clamp(20px, 3vw, 28px);
+      color:#d5dfef;
+      margin:0 0 14px;
+      font-weight:600;
+    }
+    .hero p{
+      margin:0;
+      max-width:800px;
+      color:#d9e2f2;
+      font-size:18px;
+    }
+    .grid-2{
+      display:grid;
+      grid-template-columns:repeat(2, minmax(0,1fr));
+      gap:18px;
+      margin-top:22px;
+    }
+    .card,.intro,.panel,.format-card,.step,.timeline-item,.scene-group,.final-goal{
+      background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.015));
+      border:1px solid var(--line);
+      border-radius:18px;
+      box-shadow:0 10px 24px rgba(0,0,0,0.18);
+    }
+    .card,.intro,.panel,.final-goal{padding:22px}
+    .label{
+      display:inline-block;
+      margin-bottom:10px;
+      font-size:12px;
+      text-transform:uppercase;
+      letter-spacing:.08em;
+      color:#b8c5da;
+    }
+    .question{
+      font-size:30px;
+      font-weight:800;
+      line-height:1.18;
+      margin:0 0 8px;
+      letter-spacing:-0.02em;
+    }
+    .muted{color:var(--muted)}
+    .section-title{
+      margin:34px 0 14px;
+      font-size:30px;
+      color:#f0f4fb;
+      letter-spacing:-0.02em;
+    }
+    .intro strong{color:var(--text)}
+    .scene-group{padding:18px; margin-top:16px}
+    .scene-group h3{
+      margin:0 0 14px;
+      font-size:22px;
+      color:#f3f6fb;
+    }
+    .scene-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .scene-grid.one{grid-template-columns:1fr}
+    .scene{
+      border-radius:16px;
+      padding:18px;
+      border:1px solid rgba(255,255,255,0.06);
+      min-height:220px;
+      background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));
+    }
+    .scene.ak1{background:linear-gradient(180deg, rgba(140,106,42,0.16), rgba(255,255,255,0.02))}
+    .scene.ak2{background:linear-gradient(180deg, rgba(140,106,42,0.10), rgba(255,255,255,0.02))}
+    .scene.ak3{background:linear-gradient(180deg, rgba(49,93,138,0.16), rgba(255,255,255,0.02))}
+    .scene.ak4{background:linear-gradient(180deg, rgba(47,107,87,0.16), rgba(255,255,255,0.02))}
+    .scene.ak5{background:linear-gradient(180deg, rgba(91,75,115,0.16), rgba(255,255,255,0.02))}
+    .num{
+      width:38px;height:38px;border-radius:11px;
+      display:inline-flex;align-items:center;justify-content:center;
+      font-weight:800;font-size:16px;color:#f6f8fc;
+      border:1px solid rgba(255,255,255,0.10);
+      background:rgba(255,255,255,0.06);
+      margin-bottom:10px;
+    }
+    .scene h4{
+      margin:0 0 8px;
+      font-size:19px;
+      line-height:1.25;
+      color:#f7f9fd;
+    }
+    .scene p{margin:0 0 10px; color:#bdc7d9; font-size:15px}
+    .focus{font-size:14px; color:#d9e2f2; font-weight:700; margin:8px 0 0}
+    .formats,.steps{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+    }
+    .steps{grid-template-columns:repeat(4,minmax(0,1fr))}
+    .format-card,.step{padding:18px}
+    .format-card h4,.step h4{
+      margin:0 0 6px;
+      font-size:18px;
+      color:#f5f8fd;
+    }
+    .format-card p{margin:0; color:var(--muted)}
+    .step-number{
+      width:34px;height:34px;border-radius:50%;
+      background:#314866;color:#f8fbff;
+      display:inline-flex;align-items:center;justify-content:center;
+      font-weight:800;margin-bottom:10px;
+    }
+    ul{margin:8px 0 0; padding-left:18px; color:var(--muted)}
+    .split{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:16px;
+    }
+    .panel h3{
+      margin:0 0 10px;
+      font-size:22px;
+      color:#f4f7fd;
+    }
+    .timeline{display:grid; gap:12px}
+    .timeline-item{
+      display:grid;
+      grid-template-columns:220px 1fr;
+      gap:14px;
+      padding:16px;
+    }
+    .timeline-date{
+      border:1px solid rgba(255,255,255,0.08);
+      background:rgba(255,255,255,0.04);
+      border-radius:12px;
+      padding:12px 14px;
+      font-weight:800;
+      color:#dfe8f7;
+    }
+    .timeline-content h4{
+      margin:0 0 6px;
+      font-size:18px;
+      color:#f2f6fd;
+    }
+    .timeline-content p{margin:0; color:var(--muted)}
+    .final-goal blockquote{
+      margin:12px 0 0;
+      font-size:26px;
+      line-height:1.28;
+      font-weight:800;
+      color:#f3f7fe;
+      letter-spacing:-0.02em;
+    }
+    .footer{
+      margin-top:28px;
+      text-align:center;
+      color:#93a0b5;
+      font-size:14px;
+    }
+    @media (max-width:920px){
+      .grid-2,.scene-grid,.formats,.steps,.split{grid-template-columns:1fr}
+      .timeline-item{grid-template-columns:1fr}
+      .container{width:min(96%,96%)}
+      .hero{padding:30px 24px}
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <section class="hero">
+      <div class="eyebrow">Grade 11–12 Student Theatre Production</div>
+      <h1>The Story of the Aga Khans</h1>
+      <div class="subtitle">Guidance in Changing Times</div>
+      <p>This production explores key moments from the lives of the Aga Khans and asks one central question: <strong>How has guidance responded to changing times?</strong></p>
+    </section>
+
+    <section class="grid-2">
+      <div class="card">
+        <div class="label">Central Question</div>
+        <div class="question">How has guidance responded to changing times?</div>
+        <p class="muted">Every scene should answer this in a different way. The goal is not just to retell history, but to show how guidance responded to the needs of the time.</p>
+      </div>
+      <div class="card">
+        <div class="label">What This Production Is</div>
+        <p class="muted" style="margin-top:0;">This is an annual student-led theatre production where Grade 11 and 12 students work in groups to bring important stories from the lives of the Aga Khans to the stage.</p>
+        <ul>
+          <li>Each group presents a <strong>3–4 minute scene</strong></li>
+          <li>Each scene focuses on one event or story</li>
+          <li>Narrators connect the full production across time</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="intro" style="margin-top:18px;">
+      Across history, the world has gone through political change, social transformation, crisis, displacement, uncertainty, and renewal. Through these different moments, the Imamat has remained a source of guidance. <strong>This production is about understanding how guidance responded in different times and contexts — and what these stories can teach us today.</strong>
+    </section>
+
+    <h2 class="section-title">Production Structure: 10 Scenes</h2>
+
+    <section class="scene-group">
+      <h3>Aga Khan I</h3>
+      <div class="scene-grid">
+        <div class="scene ak1">
+          <div class="num">1</div>
+          <h4>Receiving the Title of Aga Khan</h4>
+          <p>A moment of leadership, recognition, and the beginning of a new chapter in a changing political world.</p>
+          <div class="focus">Focus: leadership and recognition</div>
+        </div>
+        <div class="scene ak1">
+          <div class="num">2</div>
+          <h4>The Aga Khan Case (1866)</h4>
+          <p>A legal case that brought clarity to community identity and authority during a time of confusion and division.</p>
+          <div class="focus">Focus: identity, authority, and unity</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-group">
+      <h3>Aga Khan II</h3>
+      <div class="scene-grid one">
+        <div class="scene ak2">
+          <div class="num">3</div>
+          <h4>A Short Imamat, A Steady Hand</h4>
+          <p>A shorter Imamat that still showed continuity, stability, and guidance during a time of transition.</p>
+          <div class="focus">Focus: continuity and stability</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-group">
+      <h3>Aga Khan III</h3>
+      <div class="scene-grid">
+        <div class="scene ak3">
+          <div class="num">4</div>
+          <h4>Becoming Imam at Age 8</h4>
+          <p>A young Imam steps into major responsibility while the world around him is changing.</p>
+          <div class="focus">Focus: early responsibility and leadership</div>
+        </div>
+        <div class="scene ak3">
+          <div class="num">5</div>
+          <h4>Guidance During the Bubonic Plague</h4>
+          <p>Leadership, care, and response during a time of fear, illness, and uncertainty.</p>
+          <div class="focus">Focus: care and crisis leadership</div>
+        </div>
+        <div class="scene ak3">
+          <div class="num">6</div>
+          <h4>Supporting Aligarh University</h4>
+          <p>Investment in education and reform to prepare communities for the future.</p>
+          <div class="focus">Focus: education and future-building</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-group">
+      <h3>Aga Khan IV</h3>
+      <div class="scene-grid">
+        <div class="scene ak4">
+          <div class="num">7</div>
+          <h4>The Ugandan Expulsion</h4>
+          <p>A story of displacement, resettlement, and guidance during crisis.</p>
+          <div class="focus">Focus: crisis, migration, and rebuilding</div>
+        </div>
+        <div class="scene ak4">
+          <div class="num">8</div>
+          <h4>Improving Quality of Life</h4>
+          <p>A scene showing how real change requires investment across many areas — such as health, education, roads, and development.</p>
+          <div class="focus">Focus: institutions, development, and quality of life</div>
+        </div>
+        <div class="scene ak4">
+          <div class="num">9</div>
+          <h4>Guidance During COVID</h4>
+          <p>Leadership, adaptation, and community care during a global pandemic.</p>
+          <div class="focus">Focus: adaptation and care in a global crisis</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scene-group">
+      <h3>Aga Khan V</h3>
+      <div class="scene-grid one">
+        <div class="scene ak5">
+          <div class="num">10</div>
+          <h4>Living the Guidance</h4>
+          <p>Inspired by the marathon on his last birthday, this scene highlights discipline, action, and leading by example.</p>
+          <div class="focus">Focus: practicing what is preached</div>
+        </div>
+      </div>
+    </section>
+
+    <h2 class="section-title">Performance Format Options</h2>
+    <section class="formats">
+      <div class="format-card"><h4>Drama / Short Play</h4><p>Traditional acting with characters and dialogue.</p></div>
+      <div class="format-card"><h4>Spoken Word / Poetry</h4><p>Expressive storytelling through powerful words and emotion.</p></div>
+      <div class="format-card"><h4>News Report / Broadcast</h4><p>Reporters cover the event as it unfolds.</p></div>
+      <div class="format-card"><h4>Interview Format</h4><p>Characters are interviewed to reveal different perspectives.</p></div>
+      <div class="format-card"><h4>Narrative Storytelling</h4><p>A storyteller guides the audience through the event.</p></div>
+      <div class="format-card"><h4>Movement / Physical Theatre</h4><p>Use body, space, and minimal dialogue to tell the story.</p></div>
+    </section>
+
+    <section class="intro" style="margin-top:18px;">
+      Groups can choose <strong>one format</strong> or combine <strong>two or more formats</strong> to create their 3–4 minute scene.
+    </section>
+
+    <h2 class="section-title">What Each Group Is Responsible For</h2>
+    <section class="steps">
+      <div class="step">
+        <div class="step-number">1</div>
+        <h4>Understand the Story</h4>
+        <ul>
+          <li>What happened?</li>
+          <li>What was changing at the time?</li>
+          <li>Why did this moment matter?</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="step-number">2</div>
+        <h4>Identify the Message</h4>
+        <ul>
+          <li>What does this moment show about guidance?</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="step-number">3</div>
+        <h4>Create the Scene</h4>
+        <ul>
+          <li>3–4 minutes long</li>
+          <li>Clear structure</li>
+          <li>Simple but effective staging</li>
+        </ul>
+      </div>
+      <div class="step">
+        <div class="step-number">4</div>
+        <h4>Connect to the Theme</h4>
+        <ul>
+          <li>Show how your scene answers the central question</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2 class="section-title">Role of Narrators</h2>
+    <section class="panel">
+      <p class="muted" style="margin-top:0;">Narrators are not just there to explain what is happening. They connect scenes, show how times were changing, highlight how guidance responded, and help the audience understand the bigger picture. They are the thread that ties the full production together.</p>
+    </section>
+
+    <h2 class="section-title">Guidelines for Strong Scenes</h2>
+    <section class="split">
+      <div class="panel">
+        <h3>Strong scenes should</h3>
+        <ul>
+          <li>Focus on one clear event or story</li>
+          <li>Show people, emotions, and stakes</li>
+          <li>Be easy for the audience to follow</li>
+          <li>Clearly connect to the larger theme</li>
+        </ul>
+      </div>
+      <div class="panel">
+        <h3>Avoid</h3>
+        <ul>
+          <li>Too many historical details</li>
+          <li>Long explanations</li>
+          <li>Trying to show everything at once</li>
+          <li>Turning the scene into a history presentation</li>
+        </ul>
+      </div>
+    </section>
+
+    <h2 class="section-title">Production Timeline</h2>
+    <section class="timeline">
+      <div class="timeline-item"><div class="timeline-date">April 18 (Sat)</div><div class="timeline-content"><h4>Orientation and Assigning of Groups</h4><p>Introduction to the theme, production structure, and assigning students into groups.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">April 25 (Sat)</div><div class="timeline-content"><h4>Script Brainstorming and Assigning Roles</h4><p>Groups begin understanding their story, brainstorming ideas, and assigning roles.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">May 2 (Sat)</div><div class="timeline-content"><h4>Script Writing</h4><p>Groups draft and shape their scene.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">May 7 (Thurs)</div><div class="timeline-content"><h4>Initial Rehearsal</h4><p>First rehearsal of scenes and initial feedback.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">May 14 (Sat)</div><div class="timeline-content"><h4>Practice</h4><p>Groups continue rehearsing and refining their work.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">May 21 (Thurs)</div><div class="timeline-content"><h4>Practice</h4><p>Further scene work, transitions, and narrator connections.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">May 23 (Sat)</div><div class="timeline-content"><h4>Final Rehearsal</h4><p>Full rehearsal and final adjustments.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">June 4</div><div class="timeline-content"><h4>Optional Practice</h4><p>Extra rehearsal time if needed.</p></div></div>
+      <div class="timeline-item"><div class="timeline-date">June 6</div><div class="timeline-content"><h4>Final Showcase</h4><p>The full production is presented to the Jamat.</p></div></div>
+    </section>
+
+    <h2 class="section-title">Important Reminders</h2>
+    <section class="panel">
+      <ul>
+        <li>Do your research — do not guess the story</li>
+        <li>Plan props and staging early</li>
+        <li>Revise your script after rehearsal</li>
+        <li>Narrators need separate and shared rehearsal time</li>
+        <li>Be prepared — each group affects the whole production</li>
+      </ul>
+    </section>
+
+    <h2 class="section-title">Final Goal</h2>
+    <section class="final-goal">
+      <p class="muted" style="margin-top:0;">By the end of the production, the audience should leave with a stronger understanding of this question:</p>
+      <blockquote>How has guidance responded to changing times across history?</blockquote>
+    </section>
+
+    <div class="footer">The Story of the Aga Khans • Guidance in Changing Times</div>
+  </div>
+</body>
+</html>
